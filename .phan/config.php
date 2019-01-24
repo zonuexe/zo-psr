@@ -347,6 +347,7 @@ return [
 	'tests',
         'vendor/filp/whoops/src/Whoops',
         'vendor/phan/phan/src/Phan',
+	'vendor/psr',
     ],
 
     // A list of individual files to include in analysis

@@ -20,5 +20,8 @@
         "filp/whoops": "^2.3",
         "phan/phan": "^1.2",
         "phpstan/phpstan-shim": "^0.11.1"
+    },
+    "require": {
+        "psr/cache": "^1.0"
     }
 }
