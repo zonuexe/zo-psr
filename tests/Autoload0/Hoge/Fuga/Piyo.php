@@ -2,10 +2,8 @@
 
 namespace Hoge\Fuga;
 
-final class Piyo
-{
-    public function __construct()
-    {
-        echo __CLASS__, "\n";
-    }
+final class Piyo {
+	public function __construct() {
+		echo __CLASS__, "\n";
+	}
 }

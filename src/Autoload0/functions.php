@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * PSR-0 Autoload Implementation
@@ -9,15 +9,14 @@
 
 namespace ZoPsr\Autoload0;
 
-function add_directory(string $directory)
-{
-    $directory = rtrim(rtrim($directory, '/'), '\\');
+function add_directory(string $directory): void {
+	$directory = rtrim(rtrim($directory, '/'), '\\');
 
-    spl_autoload_register(function ($class) use ($directory) {
-        $path = strtr($class, ['\\' => '/', '_' => '/']) . '.php';
+	spl_autoload_register(function ($class) use ($directory) {
+		$path = strtr($class, ['\\' => '/', '_' => '/']) . '.php';
 
-        if (is_file($directory . DIRECTORY_SEPARATOR . $path)) {
-            require $directory . DIRECTORY_SEPARATOR . $path;
-        }
-    });
+		if (is_file($directory . DIRECTORY_SEPARATOR . $path)) {
+			require $directory . DIRECTORY_SEPARATOR . $path;
+		}
+	});
 }

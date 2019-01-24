@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * Helper function for ZoPsr testing
@@ -9,15 +9,14 @@
 
 namespace ZoPsr\TestHelper;
 
-function capture(\Closure $callback): string
-{
-    ob_start();
-    try {
-        $callback();
-    } catch (\Throwable $e) {
-        ob_end_clean();
-        throw $e;
-    }
+function capture(\Closure $callback): string {
+	ob_start();
+	try {
+		$callback();
+	} catch (\Throwable $e) {
+		ob_end_clean();
+		throw $e;
+	}
 
-    return ob_get_clean();
+	return ob_get_clean();
 }
