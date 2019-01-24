@@ -16,7 +16,7 @@ function add_directory(string $directory): void {
 		$path = strtr($class, ['\\' => '/', '_' => '/']) . '.php';
 
 		if (is_file($directory . DIRECTORY_SEPARATOR . $path)) {
-			require $directory . DIRECTORY_SEPARATOR . $path;
+			require_once $directory . DIRECTORY_SEPARATOR . $path;
 		}
 	});
 }
