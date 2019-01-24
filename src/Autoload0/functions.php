@@ -10,7 +10,7 @@
 namespace ZoPsr\Autoload0;
 
 function add_directory(string $directory): void {
-	$directory = rtrim(rtrim($directory, '/'), '\\');
+	$directory = rtrim($directory, '/\\');
 
 	spl_autoload_register(function ($class) use ($directory) {
 		$path = strtr($class, ['\\' => '/', '_' => '/']) . '.php';
