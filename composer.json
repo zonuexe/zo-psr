@@ -3,6 +3,9 @@
     "description": "A PSR implementation",
     "license": "apache-2.0",
     "autoload": {
+        "psr-4": {
+            "ZoPsr\\": "src/"
+        },
         "files": [
             "src/Autoload0/functions.php"
         ]
@@ -14,6 +17,8 @@
         ]
     },
     "require-dev": {
-        "filp/whoops": "^2.3"
+        "filp/whoops": "^2.3",
+        "phan/phan": "^1.2",
+        "phpstan/phpstan-shim": "^0.11.1"
     }
 }
