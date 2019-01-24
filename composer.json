@@ -4,7 +4,11 @@
     "license": "apache-2.0",
     "autoload-dev": {
         "files": [
+            "tests/bootstrap.php",
             "tests/helper.php"
         ]
+    },
+    "require-dev": {
+        "filp/whoops": "^2.3"
     }
 }
