@@ -1,5 +1,10 @@
 {
     "name": "zonuexe/zo-psr",
     "description": "A PSR implementation",
-    "license": "apache-2.0"
+    "license": "apache-2.0",
+    "autoload-dev": {
+        "files": [
+            "tests/helper.php"
+        ]
+    }
 }
