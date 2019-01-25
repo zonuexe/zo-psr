@@ -14,7 +14,7 @@ function add_directory(string $directory): void {
 
 	spl_autoload_register(function ($fqcn) use ($directory) {
 		$namespaces = explode('\\', $fqcn);
-		$class = array_pop($namespaces);
+		$class = array_pop($namespaces) ?: '';
 		$class_file = strtr($class, ['_' => DIRECTORY_SEPARATOR]) . '.php';
 		$ns_dir = implode(DIRECTORY_SEPARATOR, $namespaces);
 		$file_path = implode(DIRECTORY_SEPARATOR, array_filter([$directory, $ns_dir, $class_file], 'strlen'));
