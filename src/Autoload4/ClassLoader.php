@@ -16,8 +16,7 @@ final class ClassLoader {
 		$this->directories[$prefix] = $directory;
 	}
 
-	public function register(bool $prepend = false)
-	{
+	public function register(bool $prepend = false) {
 		spl_autoload_register([$this, 'autoload'], true, $prepend);
 	}
 
@@ -27,7 +26,6 @@ final class ClassLoader {
 		if ($path !== null) {
 			require_once $path;
 		}
-
 	}
 
 	private function _resolve(string $class): ?string {
@@ -46,8 +44,7 @@ final class ClassLoader {
 		return null;
 	}
 
-	private function _makePath($class, $prefix, $directory): string
-	{
+	private function _makePath($class, $prefix, $directory): string {
 		$relative = substr($class, strlen($prefix));
 		$path = strtr($relative, '\\', '/') . '.php';
 

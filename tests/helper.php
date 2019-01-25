@@ -11,10 +11,12 @@ namespace ZoPsr\TestHelper;
 
 function capture(\Closure $callback): string {
 	ob_start();
+
 	try {
 		$callback();
 	} catch (\Throwable $e) {
 		ob_end_clean();
+
 		throw $e;
 	}
 

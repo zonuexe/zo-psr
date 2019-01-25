@@ -23,11 +23,21 @@ function assert_acceptable_key(string $k): void {
  * @param string|int|array|object|null $v
  */
 function assert_acceptable_value($v): void {
-	if ($v === null) return;
-	if (is_string($v)) return;
-	if (is_int($v)) return;
-	if (is_bool($v)) return;
-	if (is_float($v)) return;
+	if ($v === null) {
+		return;
+	}
+	if (is_string($v)) {
+		return;
+	}
+	if (is_int($v)) {
+		return;
+	}
+	if (is_bool($v)) {
+		return;
+	}
+	if (is_float($v)) {
+		return;
+	}
 	if (is_array($v)) {
 		// infinite loop!!!!!
 		foreach ($v as $a) {
@@ -40,9 +50,8 @@ function assert_acceptable_value($v): void {
 	assert($v == unserialize(serialize($v)));
 }
 
-
 function assert_expiration($expiration, string $caller): void {
-	if (! (null === $expiration || $expiration instanceof \DateTime || $expiration instanceof \DateTimeInterface)) {
+	if (!(null === $expiration || $expiration instanceof \DateTime || $expiration instanceof \DateTimeInterface)) {
 		throw new ExpiresAtInvalidParameterException(sprintf(
 			'Argument 1 passed to %s must be an instance of DateTime or DateTimeImmutable; %s given',
 			$caller,

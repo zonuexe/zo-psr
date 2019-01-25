@@ -24,8 +24,8 @@ $output = capture(function () {
 	$hoge = new \Hoge\Fuga_Piyo;
 });
 
-assert($output === "Foo\\Bar
+assert($output === 'Foo\\Bar
 Hoge\\Fuga_Piyo
-");
+');
 
-echo "p(ixi)v ", __FILE__, PHP_EOL;
+echo 'p(ixi)v ', __FILE__, PHP_EOL;

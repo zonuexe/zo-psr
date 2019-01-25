@@ -11,8 +11,7 @@ use Psr\Cache\CacheItemPoolInterface;
  * @copyright 2019 USAMI Kenta
  * @license https://www.apache.org/licenses/LICENSE-2.0 Apache-2.0
  */
-final class ArrayPool implements CacheItemPoolInterface
-{
+final class ArrayPool implements CacheItemPoolInterface {
 	/** @var array<string,CacheItemInterface> */
 	private $_data = [];
 

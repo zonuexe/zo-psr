@@ -10,8 +10,7 @@ use Psr\Cache\CacheItemInterface;
  * @copyright 2019 USAMI Kenta
  * @license https://www.apache.org/licenses/LICENSE-2.0 Apache-2.0
  */
-final class Item implements CacheItemInterface
-{
+final class Item implements CacheItemInterface {
 	/** @var string */
 	private $_key;
 	/** @var mixed */
@@ -136,7 +135,7 @@ final class Item implements CacheItemInterface
 	public function expiresAfter($time) {
 		if ($time === null) {
 			$expiration =  null;
-		} else  {
+		} else {
 			$interval = is_int($time) ? new \DateInterval("PT{$time}S") : $time;
 			$expiration = (new \DateTimeImmutable)->add($interval);
 		}

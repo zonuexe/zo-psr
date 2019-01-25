@@ -16,12 +16,12 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 add_directory(__DIR__);
 
 $output = capture(function () {
-    $foo = new Foo_Bar;
-    $hoge = new \Hoge\Fuga\Piyo;
+	$foo = new Foo_Bar;
+	$hoge = new \Hoge\Fuga\Piyo;
 });
 
-assert($output === "Foo_Bar
+assert($output === 'Foo_Bar
 Hoge\\Fuga\\Piyo
-");
+');
 
-echo "p(ixi)v", PHP_EOL;
+echo 'p(ixi)v', PHP_EOL;
