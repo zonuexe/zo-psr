@@ -8,6 +8,7 @@
         },
         "files": [
             "src/Autoload0/functions.php",
+            "src/Log3/functions.php",
             "src/Cache6/functions.php"
         ]
     },
